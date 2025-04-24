@@ -1,0 +1,20 @@
+# Операционные системы
+# .DS_Store для macOS
+# Windows
+Thumbs.db
+
+# Папки виртуальных окружений
+venv/
+env/
+.env
+
+# Логи
+*.log
+
+# Системные файлы
+*.pyc
+__pycache__/
+
+# Настройки IDE
+.idea/
+.vscode/
