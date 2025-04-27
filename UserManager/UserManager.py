@@ -29,30 +29,30 @@ class User:
         self.email = email
         self.age = age
     
-    def __str__(self):
+    def __str__(self) -> str: # Указан тип возвращаемого значения
         return f"User(username={self.username}, email={self.email}, age={self.age})"
 
 class UserManager:
-    def __init__(self):
+    def __init__(self) -> None: # Указан тип возвращаемого значения
         self.users = {}  # Словарь для хранения пользователей
 
-    def add_user(self, user: User):
+    def add_user(self, user: User) -> None: # Указан тип возвращаемого значения
         if user.username in self.users:
             raise UserAlreadyExistsError(f"Пользователь с именем '{user.username}' уже существует.")
         self.users[user.username] = user
 
-    def remove_user(self, username: str):
+    def remove_user(self, username: str) -> None: # Указан тип возвращаемого значения
         if username not in self.users:
             raise UserNotFoundError(f"Пользователь с именем '{username}' не найден.")
         del self.users[username]
 
-    def find_user(self, username: str) -> User:
+    def find_user(self, username: str) -> User: # Указан тип возвращаемого значения
         if username not in self.users:
             raise UserNotFoundError(f"Пользователь с именем '{username}' не найден.")
         return self.users[username]
 
 # Основная функция программы для тестирования
-def main():
+def main() -> None: # Указан тип возвращаемого значения
     user_manager = UserManager()
     
     # Попробуем добавить пользователей
